@@ -2,7 +2,7 @@ using ClassLibrary1;
 
 namespace WinFormsApp1
 {
-    public partial class Form1 : Form, IUserInfo
+    public partial class Form1 : Form, IUserInfo2
     {
         private UserInfoPresenter _presenter;
         public Form1()
@@ -16,12 +16,15 @@ namespace WinFormsApp1
             SaveAttempted?.Invoke(this, EventArgs.Empty);
         }
 
-        string IUserInfo.FirstName { get => this.FirstName.Text; set => this.FirstName.Text = value; }
-        string IUserInfo.LastName { get => this.LastName.Text; set => this.LastName.Text = value; }
-        string IUserInfo.Email { get => this.Email.Text; set => this.Email.Text = value; }
-        string IUserInfo.Phone { get => this.Phone.Text; set => this.Phone.Text = value; }
-        string IUserInfo.ErrorMessage { get => this.ErrorMessage.Text; set => this.ErrorMessage.Text = value; }
-        bool IUserInfo.ShowFormErrors { get => this.ErrorMessage.Visible; set => this.ErrorMessage.Visible = value; }
+        string IUserInfo.FirstName { get => FirstName.Text; set => FirstName.Text = value; }
+        string IUserInfo.LastName { get => LastName.Text; set => LastName.Text = value; }
+        string IUserInfo.Email { get => Email.Text; set => Email.Text = value; }
+        string IUserInfo.Phone { get => Phone.Text; set => Phone.Text = value; }
+        string IUserInfo.ErrorMessage { get => ErrorMessage.Text; set => ErrorMessage.Text = value; }
+        bool IUserInfo.ShowFormErrors { get => ErrorMessage.Visible; set => ErrorMessage.Visible = value; }
+        Gender IUserInfo2.Gender { get => (Gender) GenderComboBox.SelectedItem; set => GenderComboBox.SelectedItem = value; }
+        string IUserInfo2.PlaceOfResidence { get => PlaceOfResidenceTextBox.Text; set => PlaceOfResidenceTextBox.Text = value; }
+
         public event EventHandler? SaveAttempted;
     }
 }
