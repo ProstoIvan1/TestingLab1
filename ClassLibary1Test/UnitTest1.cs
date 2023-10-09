@@ -1,6 +1,6 @@
 using ClassLibrary1;
 
-namespace TestProject1
+namespace ClassLibary1Test
 {
     [TestClass]
     public class UnitTest1
