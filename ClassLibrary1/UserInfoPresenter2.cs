@@ -38,7 +38,7 @@ namespace ClassLibrary1
             {
                 if (!string.IsNullOrEmpty(_form.FirstName))
                 {
-                    if (!(char.IsUpper(_form.FirstName[0]) || char.IsUpper(_form.LastName[0])))
+                    if (!(char.IsUpper(_form.FirstName[0]) && char.IsUpper(_form.LastName[0])))
                         AddError("Name sould starts with a capital letter");
                 }
             }
